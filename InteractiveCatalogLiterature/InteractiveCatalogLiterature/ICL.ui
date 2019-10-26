@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ICL</class>
+ <widget class="QMainWindow" name="ICL">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>681</width>
+    <height>444</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/toolbar/toolbar/klen-poster.png</normaloff>:/toolbar/toolbar/klen-poster.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="mmKlenLibrary">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>681</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuBook">
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="title">
+     <string>Book</string>
+    </property>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/toolbar/toolbar/document-export.png</normaloff>:/toolbar/toolbar/document-export.png</iconset>
+     </property>
+     <addaction name="actionExportAllBooks"/>
+     <addaction name="actionExportThisBook"/>
+    </widget>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>Import</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/toolbar/toolbar/import.png</normaloff>:/toolbar/toolbar/import.png</iconset>
+     </property>
+     <addaction name="actionImportFolder"/>
+     <addaction name="actionImportOneBook"/>
+    </widget>
+    <addaction name="actionCreate"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen"/>
+    <addaction name="menuImport"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionSave"/>
+    <addaction name="menuExport"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuService">
+    <property name="title">
+     <string>Service</string>
+    </property>
+    <addaction name="actionAdditionally"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuLibrary">
+    <property name="title">
+     <string>Catalog</string>
+    </property>
+    <addaction name="actionCreateLibrary"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpenLibrary"/>
+    <addaction name="actionRestoreLibrary"/>
+    <addaction name="separator"/>
+    <addaction name="actionCloseLibrary"/>
+    <addaction name="actionBackupLibrary"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionFindText"/>
+    <addaction name="actionPreviousPage"/>
+    <addaction name="actionNextPage"/>
+    <addaction name="actionEnterNumberPage"/>
+   </widget>
+   <widget class="QMenu" name="menuInsert">
+    <property name="title">
+     <string>Insert</string>
+    </property>
+    <addaction name="actionInsertImage"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuLibrary"/>
+   <addaction name="menuBook"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuInsert"/>
+   <addaction name="menuService"/>
+  </widget>
+  <widget class="QToolBar" name="tbStandard">
+   <property name="windowTitle">
+    <string>Standard toolbar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="sbKlenLibrary">
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="tbFind">
+   <property name="windowTitle">
+    <string>Find toolbar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/document-open.png</normaloff>:/toolbar/toolbar/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open...</string>
+   </property>
+   <property name="statusTip">
+    <string>Opening book from database</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/dialog-close.png</normaloff>:/toolbar/toolbar/dialog-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="statusTip">
+    <string>Close opened book</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/document-save.png</normaloff>:/toolbar/toolbar/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="statusTip">
+    <string>Save opened book to database</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/application-exit.png</normaloff>:/toolbar/toolbar/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="statusTip">
+    <string>Exit from program</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/undo.png</normaloff>:/toolbar/toolbar/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="statusTip">
+    <string>Cancel the action</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/redo.png</normaloff>:/toolbar/toolbar/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="statusTip">
+    <string>Retry the action</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
+   </property>
+  </action>
+  <action name="actionSelectAll">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/select-all.png</normaloff>:/toolbar/toolbar/select-all.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select all</string>
+   </property>
+   <property name="statusTip">
+    <string>Selection all the text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionEditing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/editing.png</normaloff>:/toolbar/toolbar/editing.png</iconset>
+   </property>
+   <property name="text">
+    <string>Editing</string>
+   </property>
+   <property name="statusTip">
+    <string>Program switch into regime the editing.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+E</string>
+   </property>
+  </action>
+  <action name="actionReading">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/view.png</normaloff>:/toolbar/toolbar/view.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reading</string>
+   </property>
+   <property name="statusTip">
+    <string>Program switch into regime the reading.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+V</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/cut.png</normaloff>:/toolbar/toolbar/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="statusTip">
+    <string>Cuts selected of the text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/copy.png</normaloff>:/toolbar/toolbar/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="statusTip">
+    <string>Copy selected of the text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/paste.png</normaloff>:/toolbar/toolbar/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="statusTip">
+    <string>Paste contents clipboard into the  text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionCreate">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/document-new.png</normaloff>:/toolbar/toolbar/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Create...</string>
+   </property>
+   <property name="statusTip">
+    <string>Opening the window of the parameters of the new book</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionAdditionally">
+   <property name="text">
+    <string>Additionally</string>
+   </property>
+   <property name="statusTip">
+    <string>Open window with additional of information</string>
+   </property>
+  </action>
+  <action name="actionCreateLibrary">
+   <property name="text">
+    <string>Create...</string>
+   </property>
+   <property name="statusTip">
+    <string>Create of the new library</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+N</string>
+   </property>
+  </action>
+  <action name="actionOpenLibrary">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+   <property name="statusTip">
+    <string>Open new library</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
+   </property>
+  </action>
+  <action name="actionCloseLibrary">
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="statusTip">
+    <string>Close of library</string>
+   </property>
+  </action>
+  <action name="actionBackupLibrary">
+   <property name="text">
+    <string>Backup...</string>
+   </property>
+   <property name="statusTip">
+    <string>Backup of library</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+B</string>
+   </property>
+  </action>
+  <action name="actionRestoreLibrary">
+   <property name="text">
+    <string>Restore...</string>
+   </property>
+   <property name="statusTip">
+    <string>Restore library from the archive</string>
+   </property>
+  </action>
+  <action name="actionFindText">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/edit-find.png</normaloff>:/toolbar/toolbar/edit-find.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find text</string>
+   </property>
+   <property name="statusTip">
+    <string>Finding the text in the book</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionInsertImage">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/insert-image.png</normaloff>:/toolbar/toolbar/insert-image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Image</string>
+   </property>
+   <property name="statusTip">
+    <string>Inserting image to book</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+I</string>
+   </property>
+  </action>
+  <action name="actionDeletePage">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/delete.png</normaloff>:/toolbar/toolbar/delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="statusTip">
+    <string>Delete page from the book</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionNextPage">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/next.png</normaloff>:/toolbar/toolbar/next.png</iconset>
+   </property>
+   <property name="text">
+    <string>Next page</string>
+   </property>
+   <property name="statusTip">
+    <string>Go to the next page of book</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Right</string>
+   </property>
+  </action>
+  <action name="actionPreviousPage">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/toolbar/toolbar/previous.png</normaloff>:/toolbar/toolbar/previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>Previous page</string>
+   </property>
+   <property name="statusTip">
+    <string>Go to the previous page of book</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Left</string>
+   </property>
+  </action>
+  <action name="actionEnterNumberPage">
+   <property name="text">
+    <string>Enter number page...</string>
+   </property>
+   <property name="statusTip">
+    <string>Go to number page of book</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+N</string>
+   </property>
+  </action>
+  <action name="actionExportAllBooks">
+   <property name="text">
+    <string>All books...</string>
+   </property>
+   <property name="statusTip">
+    <string>Export all of books into a file</string>
+   </property>
+  </action>
+  <action name="actionExportThisBook">
+   <property name="text">
+    <string>This book...</string>
+   </property>
+   <property name="statusTip">
+    <string>Export of book into a file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionImportFolder">
+   <property name="text">
+    <string>Folder...</string>
+   </property>
+   <property name="statusTip">
+    <string>Batch Import all books from a selected folder</string>
+   </property>
+  </action>
+  <action name="actionImportOneBook">
+   <property name="text">
+    <string>One book...</string>
+   </property>
+   <property name="statusTip">
+    <string>Import of book from a file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

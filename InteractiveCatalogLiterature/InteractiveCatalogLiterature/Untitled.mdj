@@ -1,0 +1,69 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "Untitled",
+	"ownedElements": [
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFF+qBtyKM79qY=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Main",
+					"visible": true,
+					"defaultDiagram": true
+				}
+			],
+			"visibility": "public"
+		},
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFVR05PtzCtbx4=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "CppReverse",
+			"ownedElements": [
+				{
+					"_type": "UMLPackageDiagram",
+					"_id": "AAAAAAFVR05SBDCw1vY=",
+					"_parent": {
+						"$ref": "AAAAAAFVR05PtzCtbx4="
+					},
+					"name": "Package Structure",
+					"visible": true,
+					"defaultDiagram": false
+				},
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFVR05UbzC0CNk=",
+					"_parent": {
+						"$ref": "AAAAAAFVR05PtzCtbx4="
+					},
+					"name": "Type Hierarchy",
+					"visible": true,
+					"defaultDiagram": false
+				},
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFVR05WGzC4f/U=",
+					"_parent": {
+						"$ref": "AAAAAAFVR05PtzCtbx4="
+					},
+					"name": "Overview",
+					"visible": true,
+					"defaultDiagram": false
+				}
+			],
+			"visibility": "public"
+		}
+	]
+}

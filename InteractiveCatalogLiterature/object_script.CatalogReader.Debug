@@ -1,0 +1,15 @@
+INPUT(
+./debug\main.o
+./debug\TextBook.o
+./debug\ListBooks.o
+./debug\Create.o
+./debug\ICL.o
+./debug\ListAdditionally.o
+./debug\fileoptions.o
+./debug\moc_ListBooks.o
+./debug\moc_TextBook.o
+./debug\moc_Create.o
+./debug\moc_ICL.o
+./debug\moc_ListAdditionally.o
+./debug\qrc_images.o
+);

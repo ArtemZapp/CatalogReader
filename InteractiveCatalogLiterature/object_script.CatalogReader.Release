@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\TextBook.o
+./release\ListBooks.o
+./release\Create.o
+./release\ICL.o
+./release\ListAdditionally.o
+./release\fileoptions.o
+./release\moc_ListBooks.o
+./release\moc_TextBook.o
+./release\moc_Create.o
+./release\moc_ICL.o
+./release\moc_ListAdditionally.o
+./release\qrc_images.o
+);
